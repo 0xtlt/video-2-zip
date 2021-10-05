@@ -46,6 +46,22 @@ if [ -z "$(which zip)" ]; then
   fi
 fi
 
+# Check if jpegoptim is installed
+if [ -z "$(which jpegoptim)" ]; then
+  echo "jpegoptim is not installed"
+  echo "Trying to install it..."
+
+  # Install zip
+  # Check for linux distro and mac
+  if [ -f /etc/os-release ]; then
+    # linux
+    apt-get install jpegoptim -y
+  else
+    echo "Please install jpegoptim manually"
+    exit 1
+  fi
+fi
+
 # use env variable input and name
 # $1 is mp4 input file
 # $2 is output file name
