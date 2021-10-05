@@ -58,6 +58,8 @@ if [ -f $1 ]; then
     # ffmpeg -i $1 -preset veryslow -r 30 -crf 20 -f image2 ./$2/%d.jpg
     ffmpeg -i "$1" -preset veryslow -r 30 -crf 20 -f image2 "./$2/%d.jpg" </dev/null
 
+    echo "Compressing pictures"
+
     # List every pictures and compress them
     for i in ./$2/*.jpg; do
       echo "Compressing $i"
