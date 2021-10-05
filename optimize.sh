@@ -15,7 +15,12 @@ if [ -z "$(which ffmpeg)" ]; then
   # Check for linux distro and mac
   if [ -f /etc/os-release ]; then
     # linux
-    sudo apt-get install ffmpeg -y
+    # Check if sudo command exists
+    if [ -z "$(which sudo)" ]; then
+      apt-get install ffmpeg -y
+    else
+      sudo apt-get install ffmpeg -y
+    fi
   elif [ -f /usr/bin/brew ]; then
     # mac
     brew install ffmpeg -y
@@ -33,6 +38,13 @@ if [ -z "$(which zip)" ]; then
   # Check for linux distro and mac
   if [ -f /etc/os-release ]; then
     # linux
+    # Check if sudo command exists
+    if [ -z "$(which sudo)" ]; then
+      apt-get install zip -y
+    else
+      sudo apt-get install zip -y
+    fi
+    
     sudo apt-get install zip -y
   elif [ -f /usr/bin/brew ]; then
     # mac
