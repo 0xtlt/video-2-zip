@@ -69,7 +69,7 @@ if [ -f $1 ]; then
     zip -9 ./$2.zip ./$2/*
     rm -R ./$2
 else
-    echo "Input file does not exist"  
+    echo "Input file does not exist"
     exit 1
 fi
 
