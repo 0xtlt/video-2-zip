@@ -63,7 +63,7 @@ if [ -f $1 ]; then
     # List every pictures and compress them
     for i in ./$2/*.jpg; do
       echo "Compressing $i"
-      jpegoptim -m80 -p -o "$i" "$i"
+      jpegoptim -m70 -p -o "$i" "$i"
     done
 
     zip -9 ./$2.zip ./$2/*
