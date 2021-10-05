@@ -1,5 +1,5 @@
 # Command example : ./optimize hello.mp4 world
-set -x
+# set -x
 
 echo "Optimization begins"
 
