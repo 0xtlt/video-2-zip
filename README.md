@@ -7,3 +7,5 @@ Add excutable permissions
 
 Run it
 `./execute.sh video.mp4 outname`
+Or
+`sudo ./execute.sh video.mp4 outname`
