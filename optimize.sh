@@ -55,7 +55,6 @@ if [ -f $1 ]; then
     # Delete output file
     mkdir ./$2
     # Convert input file to output file
-    # ffmpeg -i $1 -preset veryslow -r 30 -crf 20 -f image2 ./$2/%d.jpg
     ffmpeg -i "$1" -preset veryslow -r 30 -crf 20 -f image2 "./$2/%d.jpg" </dev/null
 
     echo "Compressing pictures..."
