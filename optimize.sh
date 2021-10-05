@@ -57,6 +57,13 @@ if [ -f $1 ]; then
     # Convert input file to output file
     # ffmpeg -i $1 -preset veryslow -r 30 -crf 20 -f image2 ./$2/%d.jpg
     ffmpeg -i "$1" -preset veryslow -r 30 -crf 20 -f image2 "./$2/%d.jpg" </dev/null
+
+    # List every pictures and compress them
+    for i in ./$2/*.jpg; do
+      echo "Compressing $i"
+      jpegoptim -m80 -p -o "$i" "$i"
+    done
+
     zip -9 ./$2.zip ./$2/*
     rm -R ./$2
 else
