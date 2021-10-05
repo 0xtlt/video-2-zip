@@ -1,5 +1,7 @@
 # Command example : ./optimize hello.mp4 world
 
+echo "Optimization begins"
+
 # The command must be executed as root
 if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root (sudo ./optimize)"
