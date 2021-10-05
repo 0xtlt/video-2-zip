@@ -1,4 +1,5 @@
 # Command example : ./optimize hello.mp4 world
+set -x 
 
 echo "Optimization begins"
 
@@ -52,11 +53,12 @@ fi
 if [ -f $1 ]; then
     # Check if output file exists
     # Delete output file
-    mkdir ./"$2"
+    mkdir ./$2
     # Convert input file to output file
-    ffmpeg -i "$1" -preset veryslow -r 30 -crf 20 -f image2 ./"$2"/%d.jpg
-    zip -9 ./"$2".zip ./"$2"/\*
-    rm -R ./"$2"
+    ffmpeg -i $1 -preset veryslow -r 30 -crf 20 -f image2 ./$2/%d.jpg
+    # ffmpeg -i video.mp4 -preset veryslow -r 30 -crf 20 -f image2 ./output/%d.jpg
+    zip -9 ./$2.zip ./$2/*
+    rm -R ./$2
 else
     echo "Input file does not exist"
     exit 1
