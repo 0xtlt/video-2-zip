@@ -1,8 +1,8 @@
-# Command example : ./caval hello.mp4 world
+# Command example : ./optimize hello.mp4 world
 
 # The command must be executed as root
 if [ "$(id -u)" != "0" ]; then
-   echo "This script must be run as root (sudo ./caval)"
+   echo "This script must be run as root (sudo ./optimize)"
    exit 1
 fi
 
